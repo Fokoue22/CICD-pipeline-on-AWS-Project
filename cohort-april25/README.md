@@ -27,7 +27,8 @@ Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a st
 ### - Skip build stage and test stage, 
 ### - Add 'Amazon S3" as your deploy stage and choose you s3 bucket, you have to select Extract file before deploy(very very important). Then allow every default
 ### - Then create pipeline  
-![Alt text](images/2stage-pipeline.png.)
+
+![Alt text](images/2stage-pipeline.png)
 
 
 ### Check our S3 bucket 
