@@ -63,25 +63,7 @@ Here, we can see that we'are deniet permission to see the contain of our index.h
 }
 
 ```
-![Alt text](image-1.png)
-
-### Push the local changes to CodeCommit repository.
-
-Using the following command, push the changes from your local to the CodeCommit repository.
-
-```
-git push origin master
-
-```
-![Alt text](image-1.png)
-
-### Verify that the files are pushed into the CodeCommit repository.
-
-In the CodeCommit Repository > Repositories > Code.
-
-![Alt text](image-1.png)
-
-And yay! You have pushed your local files to the CodeCommit Repository.
+![Alt text](images/website.png)
 
 ## Author
 FOKOUE THOMAS
