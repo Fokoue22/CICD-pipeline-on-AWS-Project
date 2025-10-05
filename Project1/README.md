@@ -4,19 +4,19 @@
 
 ### Open aws console and search for CodeCommit and Click on Create repository
 
-![Alt text](image.png)
+![Alt text](create.png)
 
 ### Your repository will be created here
  
-![Alt text](image-1.png)
+![Alt text](repo.png)
   
 ### Now go to IAM and select the current user
 
-![Alt text](image-1.png)
+![Alt text](iam.png)
 
 ### Click on Generate credentials
 
-![Alt text](image-1.png)
+![Alt text](credentails.png)
 
 ### Now copy the clone command of your repo and paste it in your file system
 
