@@ -20,23 +20,47 @@ Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a st
 
 ![Alt text](images/enable-static-website.png)
 
-### Click on Generate credentials
+### Now let open our CodePipeline and create our Pipelin. 
+### - In category choose "Build custom pipeline", 
+### - give Name, 
+### - on source stage "choose Github and establish a connection with your repo (on default branch type 'main')",
+### - Skip build stage and test stage, 
+### - Add 'Amazon S3" as your deploy stage and choose you s3 bucket, you have to select Extract file before deploy(very very important). Then allow every default
+### - Then create pipeline  
+![Alt text](images/2stage-pipeline.png.)
 
-![Alt text](credentails.png)
 
-### Now copy the clone command of your repo and paste it in your file system
+### Check our S3 bucket 
 
-![Alt text](image-1.png)
+![Alt text](images/s3-updated.png)
 
-Here, we have successfully cloned our repository.
+Here, we see how codepipeline have successfully push our git repo contain to S3.
 
-## Task 2 - Add a new file from local and commit to your local branch
+## Now let verifier the content of our index.html
 
 ### Open the local system, Create a new file called tasks.txt then Execute the below commands
+![Alt text](images/error.png)
 
+Here, we can see that we'are deniet permission to see the contain of our index.html file. 
+
+### To resolve that issue we need a bucket policy to solve that issue. So we copy th policy below and change that bucket name with our bucket name 
 ```
-git add .
-git commit -m "message"
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+            ]
+        }
+    ]
+}
 
 ```
 ![Alt text](image-1.png)
