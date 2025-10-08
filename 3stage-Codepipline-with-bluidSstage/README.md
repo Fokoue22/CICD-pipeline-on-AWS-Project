@@ -2,11 +2,11 @@
 This repository contain CI/CD pipeline using CODEPIPELINE build for devop-april25
 
 # 3stage-Codepipline-with-bluidSstage
-Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a static website on AMAZON S3 Bucket. The website is will display a simple HTML webpage. 
-![Alt text](images/CICD-pipeline-architecture.jpg)
+Setup a three stage CI/CD pipeline using CODEPIPELINE and CODEBUILD to automatically deploy a build.yaml file on AMAZON S3 Bucket. The file will install a python file that will contain our "HellWorld from CodeBuild!!!' is will display a simple HTML webpage. 
+![Alt text](images/3stage-architecture-codebluid.png)
 
 
-### The first step is to create and connect to your repo on git and push your html file e.g cohort-april25
+### The first step is to create and connect to your repo on git and push your html file e.g 3stage-Codepipline-with-bluidSstage
 
 ![Alt text](images/push-git.png)
 
@@ -22,7 +22,10 @@ Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a st
 ### - In category choose "Build custom pipeline", 
 ### - give Name, 
 ### - on source stage "choose Github and establish a connection with your repo (on default branch type 'main')",
-### - Skip build stage and test stage, 
+### - On Build stage, click on "Other build providers" then choose "AWS CodeBuild" Now we ned to do the intergration between our Codepipline and Codebuild and for that we click on "create Project". From the a new page is going to come from bluidspace "give the name" and leave "all the reste default" on Buildspec click on "Use a buildspec file" and on builspec name -optional type "buildspec.yml" the create your BuildSpec 
+![Alt text](images/buildspec.png)
+
+### - Skip test stage,
 ### - Add 'Amazon S3" as your deploy stage and choose you s3 bucket, you have to select Extract file before deploy(very very important). Then allow every default
 ### - Then create pipeline  
 
@@ -35,34 +38,7 @@ Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a st
 
 Here, we see how codepipeline have successfully push our git repo contain to S3.
 
-## Now let verifier the content of our index.html
 
-### Open the local system, Create a new file called tasks.txt then Execute the below commands
-![Alt text](images/error.png)
-
-Here, we can see that we'are deniet permission to see the contain of our index.html file. 
-
-### To resolve that issue we need a bucket policy to solve that issue. So we copy th policy below and change that bucket name with our bucket name 
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::YOUR_BUCKET_NAME/*"
-            ]
-        }
-    ]
-}
-
-```
-![Alt text](images/website.png)
 
 ## Author
 FOKOUE THOMAS
