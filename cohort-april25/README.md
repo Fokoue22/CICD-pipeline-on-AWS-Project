@@ -3,7 +3,7 @@ This repository contain CI/CD pipeline using CODEPIPELINE build for devop-april2
 
 # COHORT_APRIL25
 Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a static website on AMAZON S3 Bucket. The website is will display a simple HTML webpage. 
-![Alt text](images/CICD-pipeline-architecture.jpg)
+![Alt text](images/CICD-pipeline-architecture.png)
 
 
 ### The first step is to create and connect to your repo on git and push your html file e.g cohort-april25
