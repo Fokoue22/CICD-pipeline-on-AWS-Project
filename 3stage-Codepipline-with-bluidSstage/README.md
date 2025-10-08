@@ -1,7 +1,7 @@
 #  DevOps-on-AWS
 This repository contain CI/CD pipeline using CODEPIPELINE build for devop-april25
 
-# COHORT_APRIL25
+# 3stage-Codepipline-with-bluidSstage
 Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a static website on AMAZON S3 Bucket. The website is will display a simple HTML webpage. 
 ![Alt text](images/CICD-pipeline-architecture.jpg)
 
@@ -21,7 +21,7 @@ Setup a two stage CI/CD pipeline using CODEPIPELINE to automatically deploy a st
 ### Now let open our CodePipeline and create our Pipelin. 
 ### - In category choose "Build custom pipeline", 
 ### - give Name, 
-### - on source stage "choose Github and establish a connection with your repo. If you have any dificulty connect git with codepipline visit the official documentation on AWS [this page](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-create-github.html) for more information about the syntax to use.(on default branch type 'main')",
+### - on source stage "choose Github and establish a connection with your repo (on default branch type 'main')",
 ### - Skip build stage and test stage, 
 ### - Add 'Amazon S3" as your deploy stage and choose you s3 bucket, you have to select Extract file before deploy(very very important). Then allow every default
 ### - Then create pipeline  
